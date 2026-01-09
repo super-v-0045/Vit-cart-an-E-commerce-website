@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViT-Cart-'Home'</title>
+    <link rel="shortcut icon" href="favicon_io (1)/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/product.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <style>
+        a{
+            font-weight:bold;
+        }
+        a:hover{
+            color: white;
+    font-weight:bolder;
+    font-size:20px;
+    
+}
+header{
+    background-color: rgb(76 41 76);
+}
+button{
+    height: 100%;
+}
+button:hover {
+    height: 28%;
+    background-color: red;
+    position: absolute;
+    top:220px;
+}
+</style>
+</head>
+<!-- <?php
+//  $con= new mysqli("localhost","root","","vit-cart");
+//  error_reporting(0);
+//  $id = $_GET['id'];
+ 
+//  $query="SELECT * FROM `user` where id = '".$id."'";
+//  $result= $con->query($query);
+ 
+//  //  $rows = mysqli_query($con, $query);
+//  $row=$result->fetch_assoc();
+//  if ($id===NULL) {
+//     $name='customer';
+//     $vis='hidden';
+//  }else{
+//      $name=$row["Name"];
+//      $vis='visible';
+//      ?>
+ <script>
+    alert("login successfully");
+    </script>
+ <?php
+//  }
+//  $N=$row["Name"];
+//  $edit_query = mysqli_query($con, "SELECT COUNT(*) as count FROM `cart` WHERE Email = '".$row["email"]."'");
+//  $result = mysqli_fetch_assoc($edit_query);
+ ?> -->
+<body> 
+    <header>
+        <nav>
+            <div class="logo">
+                <b> <img src="premiumlogo/onlinelogomaker-101123-1400-6179-2000-transparent.png" alt=""> </b>
+            </div>
+            <ul>
+                <!-- dropdown list start from here -->
+                <li class="nav-item dropdown fw-bold">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" style="color: white;">
+                        Product<!--  name of dropdown list -->
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" title="Laptop" href="Laptop.php?email=<?php echo $row["email"];?>&Name=<?php echo $N;?>"><img src="img/laptop/Acer_2.webp" style="height: 6vh;" alt="laptop"></a></li>
+                        <li><a class="dropdown-item" href="Mobile.php?email=<?php echo $row["email"];?>&Name=<?php echo $N;?>" title="Smart Phones"><img src="img/mobile/vivo_2.webp" alt="Smart Phones" style="height: 6vh;"></a></li>
+                        <li>
+                        <li><a class="dropdown-item" title="Male Fashion" href="MaleClothes.php?email=<?php echo $row["email"];?>&Name=<?php echo $N;?>"><img src="img/New folder/1694599246427Color Plus.jpg" alt="Male Fashion" style="height: 6vh;"></a></li>
+                </li>
+                <li><a class="dropdown-item" href="FemaleClothes.php?email=<?php echo $row["email"];?>&Name=<?php echo $N;?>" title="Female Fashion"><img src="img/New folder/Header_Banner_Lingerie_1944x.webp" style="height: 6vh;" alt="Female Fashion"></a></li>
+            </ul>
+            </li>
+            <!-- dropdown list end here -->
+            </ul>
+            <div class="search">
+                <a href="search.php?email=<?php echo $row["email"];?>"><img src="img/R.png" title="search" height="30vh"></a>
+            </div>
+            <ul>
+                <li class="nav-item dropdown fw-bold">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" style="color: white;">
+                        <?php echo $name;?>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="signIn.html">signIn</a></li>
+                        <li><a class="dropdown-item" href="login.html">login</a></li>
+                        <li><a class="dropdown-item" style="visibility:<?php echo $vis;?>;" href="customer_edit.php?edit=<?php echo $row["email"];?>">edit your profile</a></li>
+                        <li><a class="dropdown-item" style="visibility:<?php echo $vis;?>;" href="index.php">logout</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown fw-bold">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" style="color: white;">
+                        Seller
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" target="_blank" href="Seller_signIn.html">signIn</a></li>
+                        <li><a class="dropdown-item" target="_blank" href="Seller_logIn.html">login</a></li>
+                    </ul>
+                </li>
+                <li><a href="order.php?email=<?php echo $row["email"];?>" title="view order">View your order</a></li>
+                
+            <li><a href="cart.php?email=<?php echo $row["email"];?>"><big><b><div class="cart-icon" style=" font-size: 35px;position: relative;color: white;">
+        <span class="badge" style="position: absolute;top: -4px;right: -2px;background-color: #ff0000;color: #f5f6f5;font-size: 17px;border-radius: 50%;padding: 3px 6px;"><?php echo $result['count'];?></span>
+        <i class="fa fa-shopping-cart"></i>
+    </div></b></big></big></a></li>
+            
+            </ul>
+            </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <div id="carouselExampleIndicators" class="carousel slide mt-5" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="Laptop.php?email=<?php echo $row["email"];?>&Name=<?php echo $N;?>"><img title="laptop" src="img/New folder/Estore-Banner-Exclusive_1640x613_1.webp"
+                            class="d-block w-100" alt="..." height="600px"></a>
+                </div>
+                <div class="carousel-item">
+                    <a href="Mobile.php?email=<?php echo $row["email"];?>&Name=<?php echo $N;?>"> <img title="mobile" src="img/New folder/c5bb587febffd490700ae9b37f1378a5.jpg"
+                            class="d-block w-100" alt="..." height="600px"></a>
+                </div>
+                <div class="carousel-item">
+                    <a href="MaleClothes.php?email=<?php echo $row["email"];?>&Name=<?php echo $N;?>"><img title="Mens Fashion" src="img/New folder/1694599246427Color Plus.jpg"
+                            class="d-block w-100" alt="..." height="600px"></a>
+                </div>
+                <div class="carousel-item">
+                    <a href="FemaleClothes.php?email=<?php echo $row["email"];?>&Name=<?php echo $N;?>"><img
+                            src="img/New folder/Homepage_Banner_2_d94b2985-d5d8-4958-8b51-65b785572f1d_1944x.webp"
+                            class="d-block w-100" alt="..." title="ladies Fashion" height="600px"></a>
+                </div>
+                <div class="carousel-item">
+                    <a href="Mobile.php?email=<?php echo $row["email"];?>&Name=<?php echo $N;?>"><img src="img/New folder/571bf80fc443e184e6d8edb8428b64d2.jpg"
+                            class="d-block w-100" alt="..." height="600px" title="Smart Phones"></a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+</div>
+        <video muted loop autoplay source src="video/video.mp4" type="video/mp4" height="400px" width="700vw"
+            style="border-radius: 55px">
+
+            Your browser does not support the video tag.
+        </video><br><br>
+        <u><h1>you may like this</h1></u>
+        <?php include('suggestion.php'); ?>
+        <?php include('about.html'); ?>
+        <?php include('contact.html'); ?>
+    </main>
+    <footer class="flex-all-center">
+        <p>Copyright &copy; ViT-Cart.com </p>
+    </footer>
+</body>
+</html>
